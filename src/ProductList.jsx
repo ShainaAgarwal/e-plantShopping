@@ -291,15 +291,20 @@ function ProductList({ onHomeClick }) {
 
         <ul>
           {category.plants.map((plant, i) => (
+            const isInCart = cartItems.some(item => item.name === plant.name);
+
             <li key={i}>
               <img src={plant.image} width="120" alt={plant.name} />
               <h3>{plant.name}</h3>
               <p>{plant.description}</p>
               <p>{plant.cost}</p>
 
-              <button onClick={() => dispatch(addItem(plant))}>
-                Add to Cart
-              </button>
+              <button onClick={() => dispatch(addItem(plant))}
+              disabled={isInCart} // disable if already in cart
+              style={{ backgroundColor: isInCart ? '#ccc' : '#4CAF50' }}
+             >
+             {isInCart ? 'Added to Cart' : 'Add to Cart'}
+             </button>
 
             </li>
           ))}
