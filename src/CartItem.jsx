@@ -57,7 +57,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleCheckout = () => {
   if (cart.length === 0) {
-    alert("Your cart is empty! Add some plants before checkout.");
+    alert("Your cart is empty!! Add some plants before checkout.");
   } else {
     alert(`Proceeding to checkout. Total amount: $${calculateTotalAmount()}`);
     // Future: redirect to a payment page or summary page
@@ -91,7 +91,7 @@ const CartItem = ({ onContinueShopping }) => {
         <br />
         <button className="get-started-button1" onClick={handleCheckout}>Checkout</button>
       </div>
-    </div
+    </div>
   );
 };
 
