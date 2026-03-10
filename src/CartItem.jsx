@@ -40,7 +40,14 @@ const CartItem = ({ onContinueShopping }) => {
     }
    };
 
-  
+  const handleRemove = (item) => {
+  const exists = cart.find(cartItem => cartItem.name === item.name);
+  if (exists) {
+    dispatch(removeItem(item.name));
+  } else {
+    alert("Item not found in cart.");
+  }
+};
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
@@ -84,7 +91,7 @@ const CartItem = ({ onContinueShopping }) => {
         <br />
         <button className="get-started-button1" onClick={handleCheckout}>Checkout</button>
       </div>
-    </div>
+    </div
   );
 };
 
