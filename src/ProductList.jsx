@@ -290,7 +290,7 @@ function ProductList({ onHomeClick }) {
         <h2>{category.category}</h2>
 
         <ul>
-          {category.plants.map((plant, i) => (
+          {category.plants.map((plant, i) => {
             const isInCart = cartItems.some(item => item.name === plant.name);
 
             <li key={i}>
@@ -307,7 +307,7 @@ function ProductList({ onHomeClick }) {
              </button>
 
             </li>
-          ))}
+           })}
         </ul>
 
       </div>
