@@ -217,11 +217,11 @@ function ProductList({ onHomeClick }) {
     ];
     const styleObj = {
         backgroundColor: '#4CAF50',
-        color: '#fff!important',
+        color: '#fff',
         padding: '15px',
         display: 'flex',
         justifyContent: 'space-between',
-        alignIems: 'center',
+        alignItems: 'center',
         fontSize: '20px',
     }
     const styleObjUl = {
@@ -259,6 +259,7 @@ function ProductList({ onHomeClick }) {
         return cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0; 
     };
     return (
+        <>
         <div>
             <div className="navbar" style={styleObj}>
                 <div className="tag">
@@ -312,6 +313,7 @@ function ProductList({ onHomeClick }) {
 
 </div>
 </div>
+</div>
             {!showCart ? (
   <div className="product-grid">
 
@@ -351,7 +353,8 @@ function ProductList({ onHomeClick }) {
   <CartItem onContinueShopping={handleContinueShopping} />
 
 )}
-</div>
-    )}
+</>
+    );
+}
 
 export default ProductList;
